@@ -16,10 +16,7 @@ function App() {
       <button
         onClick={() =>
           setTheme((prevTheme) => {
-            return setInterval(
-              () => (prevTheme === "red" ? "blue" : "red"),
-              1000
-            );
+            return prevTheme === "red" ? "blue" : "red";
           })
         }
       >
