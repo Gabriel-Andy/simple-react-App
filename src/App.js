@@ -1,14 +1,16 @@
 import React from "react";
-
 import "./App.css";
+import Counter from "./Counter"
+import HookComponent from "./hookComponent"
 
 function App() {
+
   return (
-    <div>
-      <button>-</button>
-      <span>0</span>
-      <button>+</button>
-    </div>
+    <>
+      <Counter initialCount={0} />
+      <HookComponent initialCount ={6} />
+    </>
+
   );
 }
 
