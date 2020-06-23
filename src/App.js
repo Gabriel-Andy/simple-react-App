@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Counter initialCount={0} />
-      <HookComponent initialCount ={6} />
+      <HookComponent initialCount ={0} />
     </>
 
   );

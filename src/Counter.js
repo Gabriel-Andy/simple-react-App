@@ -16,7 +16,7 @@ class Counter extends Component {
   render() {
     return (
       <div>
-        {console.log(this.state)}
+        {/* {console.log(this.state)}
         <button
           onClick={() => {
             this.ChangeNumber(-1);
@@ -31,7 +31,7 @@ class Counter extends Component {
           }}
         >
           +
-        </button>
+        </button> */}
       </div>
     );
   }

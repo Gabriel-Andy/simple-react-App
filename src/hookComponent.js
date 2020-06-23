@@ -1,30 +1,20 @@
 import React, { useState } from "react";
 
 const HookComponent = ({ initialCount }) => {
-  const [state, setCount] = useState({ count: initialCount });
+  const [count, setCount] = useState(initialCount);
   return (
     <div>
-      <button
-        onClick={() =>
-          setCount((prevState) => {
-            return { count: prevState.count - 1 };
-          })
-        }
-      >
-        -
-      </button>
-      <span>{state.count}</span>
-      <button
-        onClick={() =>
-          setCount((prevState) => {
-            return { count: prevState.count + 1 };
-          })
-        }
-      >
-        +
-      </button>
+      <button onClick={() => setCount((prevCount) => prevCount - 1)}>-</button>
+      <span>{count}</span>
+      <button onClick={() => setCount((prevCount) => prevCount + 1)}>+</button>
     </div>
   );
 };
 
 export default HookComponent;
+
+// <button onClick={() => setCount(prevState => {
+//     return { count: prevState.count - 1 }
+// })}>
+//     -
+//       </button>
