@@ -1,4 +1,4 @@
-import React, { useContent, useContext } from "react";
+import React, {  useContext } from "react";
 import Recipe from "./Recipe";
 import { RecipeContext } from "./App";
 
