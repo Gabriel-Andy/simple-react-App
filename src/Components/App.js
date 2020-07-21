@@ -25,6 +25,7 @@ function App() {
     handleRecipeAdd,
     handleRecipeDelete,
     handleRecipeSelect,
+    handleRecipeChange,
   };
   function handleRecipeSelect(id) {
     setSelectedRecipeId(id);
@@ -33,21 +34,32 @@ function App() {
   function handleRecipeAdd() {
     const newRecipe = {
       id: uuid(),
-      name: "New",
+      name: "",
       servings: 1,
-      cookTime: "1:00",
-      instructions: "Ins",
-      ingredients: [{ id: uuid(), name: "Name", amout: "1 Ts" }],
+      cookTime: "",
+      instructions: "",
+      ingredients: [{ id: uuid(), name: "", amout: "" }],
     };
+    setSelectedRecipeId(newRecipe.id);
     setRecipes([...recipes, newRecipe]);
+  }
+  function handleRecipeChange(id, recipe) {
+    const newRecipes = [...recipes];
+    const index = newRecipes.findIndex((r) => r.id === id);
+    newRecipes[index] = recipe;
+    setRecipes(newRecipes);
   }
 
   function handleRecipeDelete(id) {
+    if (selectedRecipeId != null && selectedRecipeId === id){
+      setSelectedRecipeId(undefined)
+    }
     setRecipes(recipes.filter((recipe) => recipe.id !== id));
   }
+  
   return (
     <RecipeContext.Provider value={recipeContextValue}>
-      <RecipeList recipes={recipes}/>
+      <RecipeList recipes={recipes} />
       {selectedRecipe && <RecipeEdit recipe={selectedRecipe} />}
     </RecipeContext.Provider>
   );
