@@ -9,4 +9,12 @@
   .ingredient-grid {
     column-gap: 12px;
   }
+  .ingredient-grid span {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 281px) {
+  .ingredient-grid span {
+    font-size: 0.7rem;
+  }
 }
